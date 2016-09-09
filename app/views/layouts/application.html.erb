@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>RedditProj</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+  <% if logged_in? %>
+    <p>You are currently logged in as: <%= current_user.username %>  </p>
+
+    <form action="<%= session_url %>" method="POST">
+      <%= authenticate %>
+      <input type="hidden" name="_method" value="DELETE">
+      <input type="submit" value="Log Out">
+
+    </form>
+  <% end %>
+
+
+<%= yield %>
+
+</body>
+</html>

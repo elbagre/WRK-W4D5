@@ -1,0 +1,33 @@
+<body>
+
+<h1><%= @sub.title %></h1>
+
+<% if logged_in? && current_user.id == @sub.mod_id %>
+  <form action="<%=edit_sub_url(@sub)%>" method="GET">
+    <%= authenticate %>
+      <input type="submit" value="Edit Sub">
+  </form>
+  <h4>Description:</h4>
+  <p><%= @sub.description %></p>
+<% end %>
+<br>
+
+<h3>Posts</h3>
+<ul>
+
+<% @sub.posts.each do |post| %>
+  <li><strong><a href="<%= post_url(post) %>"><%= post.title %></a></strong></li>
+<% end %>
+
+</ul>
+</body>
+
+
+<footer>
+
+<ul>
+  <li><a href="<%=subs_url%>">Back to All Subs</a></li>
+  <li><a href="<%= new_sub_post_url(@sub) %>">Create Post</a></li>
+</ul>
+
+</footer>

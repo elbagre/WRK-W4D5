@@ -1,0 +1,15 @@
+<h2><%= @post.title %></h2>
+
+<% unless @post.url.empty?  %>
+<a href="<%= @post.url %>">Link</a>
+<% end %>
+
+<p>
+  <%= @post.content %>
+</p>
+
+<h4>Links</h4>
+<ul>
+  <li><a href="<%=sub_url(@post.sub_id)%>">Back to Sub</a></li>
+  <li><a href="<%= edit_post_url(@post) %>">Edit Post</a></li>
+</ul>

@@ -1,0 +1,16 @@
+
+
+<form action="<%=url%>" method="post">
+  <%= authenticate %>
+  <input type="hidden" name="_method" value="<%= method %>">
+  <label>Title</label>
+  <input type="text" name="sub[title]" value="<%= sub.title %>">
+  <br><br>
+  <label>Description (optional)</label>
+  <br>
+  <textarea name="sub[description]" rows="8" cols="40" value="Input here">
+  <%= sub.description %>
+  </textarea>
+  <br>
+  <input type="submit" value="Submit">
+</form>

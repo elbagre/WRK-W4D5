@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Sign Up</title>
+  </head>
+  <body>
+    <h1>Sign Up</h1>
+    <a href="<%= new_session_url %>">Sign in</a>
+    <form action="<%=users_url%>" method="POST">
+      <%= authenticate %>
+      <br>
+      <label>Username</label>
+      <input type="text" name="user[username]">
+      <label>Password</label>
+      <input type="password" name="user[password]">
+
+      <input type="submit" value="Create Account">
+    </form>
+  </body>
+</html>

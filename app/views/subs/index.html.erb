@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Subs</title>
+  </head>
+  <body>
+    <h1>Welcome to Spaghetti!</h1>
+    <form action="<%=new_sub_url%>" method="GET">
+      <%= authenticate %>
+      <input type="submit" value="Create a New Sub">
+    </form>
+    <% @subs.each do |sub| %>
+      <h4><a href="<%=sub_url(sub)%>"><%= sub.title %></a></h4>
+    <% end %>
+  </body>
+</html>
